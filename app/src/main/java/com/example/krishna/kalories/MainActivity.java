@@ -289,7 +289,32 @@ public class MainActivity extends AppCompatActivity {
                     returnValue.add(list.getJSONObject(0).getJSONArray("data").getJSONObject(x).getString("name"));
                 }
 
-                return returnValue;
+                final List<ClarifaiOutput<Concept>> resultstwo =
+                        client.getDefaultModels().foodModel()
+                                .predict()
+                                .withInputs(
+                                        ClarifaiInput.forImage(ClarifaiImage.of(image))
+                                )
+                                .executeSync()
+                                .get();
+
+                Gson gsontwo = new Gson();
+                String jsontwo = gsontwo.toJson(resultstwo);
+                System.out.println("json = " + jsontwo);
+                JSONArray listtwo = new JSONArray(jsontwo); //Something wrong here
+                ArrayList<String> returnValueTwo = new ArrayList<>();
+                for (int x = 0; x < 15; x++) {
+                    returnValueTwo.add(listtwo.getJSONObject(0).getJSONArray("data").getJSONObject(x).getString("name"));
+                }
+
+                ArrayList<String> postList = new ArrayList<>();
+                for(int x=0; x<3; x++){
+                    postList.add(returnValue.get(x));
+                    postList.add(returnValueTwo.get(x));
+                }
+
+
+                return postList;
 
             } catch (Exception e) {
             }

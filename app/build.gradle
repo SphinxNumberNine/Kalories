@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '28.0.2'
     defaultConfig {
         applicationId "com.example.krishna.kalories"
         minSdkVersion 16
@@ -29,7 +29,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.clarifai.clarifai-api2:core:2.0.2'
+    compile 'com.clarifai.clarifai-api2:core:2.2.3'
     compile 'com.android.support:design:25.1.1'
     compile 'com.android.support:recyclerview-v7:21.0.0'
     compile 'com.android.support:support-v4:20.+'
