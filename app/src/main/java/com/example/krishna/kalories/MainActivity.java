@@ -64,6 +64,8 @@ import clarifai2.dto.prediction.Concept;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Yhurd
+
     private static final int CAM_REQUEST = 1313;
     Bitmap bitmap;
     ArrayList<String> imagefoodSearch;
