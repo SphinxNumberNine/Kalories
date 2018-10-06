@@ -23,10 +23,6 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
-/**
- * Created by krishna on 5/13/17.
- */
-
 public class AddImage extends Fragment {
 
     ArrayList<String> imagefoodSearch;
