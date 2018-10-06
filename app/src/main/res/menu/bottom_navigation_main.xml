@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/action_menu"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu"
+        android:title="Daily Track"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_add"
+        android:title="Add Food"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/image_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_image"
+        android:title="Add Food"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/new_day"
+        android:enabled="true"
+        android:icon="@drawable/ic_new"
+        android:title="New Day"
+        app:showAsAction="ifRoom"/>
+
+
+
+
+
+</menu>
