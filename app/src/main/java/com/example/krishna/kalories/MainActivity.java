@@ -64,7 +64,7 @@ import clarifai2.dto.prediction.Concept;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Yhurd
+    // Final Commit
 
     private static final int CAM_REQUEST = 1313;
     Bitmap bitmap;
