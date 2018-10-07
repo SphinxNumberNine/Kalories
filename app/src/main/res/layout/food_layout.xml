@@ -4,21 +4,22 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_marginRight="40dp"
+        android:layout_marginRight="10dp"
         android:id="@+id/foodItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:textSize="30dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/calories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/foodItem"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:textSize="15dp" />
 
     <TextView
@@ -27,8 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/foodItem"
         android:layout_alignLeft="@+id/calories"
-        android:layout_marginLeft="180dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="5dp"
         android:textSize="15dp" />
 
     <TextView
@@ -36,8 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/calories"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp"
         android:textSize="15dp" />
 
@@ -48,8 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/calories"
         android:layout_alignLeft="@+id/carbs"
-        android:layout_marginLeft="180dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp"
         android:textSize="15dp" />
 

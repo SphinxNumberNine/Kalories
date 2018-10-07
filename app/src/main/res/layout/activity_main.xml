@@ -20,7 +20,19 @@
         android:paddingBottom="15dp">
 
         <TextView
+            android:layout_marginBottom="10dp"
+            android:text="Nutrition Facts:"
+            android:id="@+id/nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:fontFamily="serif-monospace"
+            android:background="@android:color/background_light" />
+
+
+        <TextView
             android:paddingTop="10dp"
+            android:layout_below="@id/nutrition"
             android:id="@+id/caloriesTrack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

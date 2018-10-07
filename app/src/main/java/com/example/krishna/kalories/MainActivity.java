@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     Food baseMacros;
     ListView foodList;
     RelativeLayout relativeLayout;
-    TextView baseCalories, baseProtein, baseCarbs, baseFat;
+    TextView baseCalories, baseProtein, baseCarbs, baseFat,nutrition;
     int cal, pro, carb, fat;
     Typeface font;
 
@@ -127,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
         foodList = (ListView) findViewById(R.id.foodList);
         registerForContextMenu(foodList);
 
-
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         try {
             cal = sharedPreferences.getInt("Calories", 0);
@@ -153,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         baseProtein = (TextView) findViewById(R.id.protienTrack);
         baseCarbs = (TextView) findViewById(R.id.carbsTrack);
         baseFat = (TextView) findViewById(R.id.fatsTrack);
+        nutrition = (TextView) findViewById(R.id.nutrition);
 
         baseCalories.setText(cal + " Calories");
         baseCalories.setTypeface(font);
@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         baseCarbs.setTypeface(font);
         baseFat.setText(fat + "g Fat");
         baseFat.setTypeface(font);
+        nutrition.setTypeface(font);
 
         relativeLayout = (RelativeLayout) findViewById(R.id.backgroundlayout);
 
@@ -289,32 +290,7 @@ public class MainActivity extends AppCompatActivity {
                     returnValue.add(list.getJSONObject(0).getJSONArray("data").getJSONObject(x).getString("name"));
                 }
 
-                final List<ClarifaiOutput<Concept>> resultstwo =
-                        client.getDefaultModels().foodModel()
-                                .predict()
-                                .withInputs(
-                                        ClarifaiInput.forImage(ClarifaiImage.of(image))
-                                )
-                                .executeSync()
-                                .get();
-
-                Gson gsontwo = new Gson();
-                String jsontwo = gsontwo.toJson(resultstwo);
-                System.out.println("json = " + jsontwo);
-                JSONArray listtwo = new JSONArray(jsontwo); //Something wrong here
-                ArrayList<String> returnValueTwo = new ArrayList<>();
-                for (int x = 0; x < 15; x++) {
-                    returnValueTwo.add(listtwo.getJSONObject(0).getJSONArray("data").getJSONObject(x).getString("name"));
-                }
-
-                ArrayList<String> postList = new ArrayList<>();
-                for(int x=0; x<3; x++){
-                    postList.add(returnValue.get(x));
-                    postList.add(returnValueTwo.get(x));
-                }
-
-
-                return postList;
+                return returnValue;
 
             } catch (Exception e) {
             }
