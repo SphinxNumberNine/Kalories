@@ -58,9 +58,10 @@ import java.util.concurrent.ExecutionException;
 import clarifai2.api.ClarifaiBuilder;
 import clarifai2.api.ClarifaiClient;
 import clarifai2.dto.input.ClarifaiInput;
-import clarifai2.dto.input.image.ClarifaiImage;
 import clarifai2.dto.model.output.ClarifaiOutput;
 import clarifai2.dto.prediction.Concept;
+import clarifai2.dto.prediction.Logo;
+import okhttp3.OkHttpClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -156,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
         baseCalories.setText(cal + " Calories");
         baseCalories.setTypeface(font);
-        baseProtein.setText(pro + "g Protien");
+        baseProtein.setText(pro + "g Protein");
         baseProtein.setTypeface(font);
         baseCarbs.setText(carb + "g Carbs");
         baseCarbs.setTypeface(font);
@@ -263,7 +264,10 @@ public class MainActivity extends AppCompatActivity {
         protected ArrayList<String> doInBackground(Void... params) {
 
             //Initialize client
-            ClarifaiClient client = new ClarifaiBuilder("GZCf7zRJZ71RHtwCsCCGLrlg1m2u1qUu4IXW-o-4", "WMmb3mztn89VyYirN97CogjqXfuxhpaXpZS9SecL").buildSync();
+            new ClarifaiBuilder("c70de6d7a4d642eb99dc3359163fa4c3");
+            ClarifaiClient client = new ClarifaiBuilder("c70de6d7a4d642eb99dc3359163fa4c3")
+                    .client(new OkHttpClient()) // OPTIONAL. Allows customization of OkHttp by the user
+                    .buildSync();
 
             //Converting bitmap to Byte
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -276,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
                         client.getDefaultModels().foodModel()
                                 .predict()
                                 .withInputs(
-                                        ClarifaiInput.forImage(ClarifaiImage.of(image))
+                                        ClarifaiInput.forImage(image)
                                 )
                                 .executeSync()
                                 .get();
