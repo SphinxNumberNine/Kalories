@@ -264,8 +264,8 @@ public class MainActivity extends AppCompatActivity {
         protected ArrayList<String> doInBackground(Void... params) {
 
             //Initialize client
-            new ClarifaiBuilder("c70de6d7a4d642eb99dc3359163fa4c3");
-            ClarifaiClient client = new ClarifaiBuilder("c70de6d7a4d642eb99dc3359163fa4c3")
+            new ClarifaiBuilder("efd6a9e549024dbf9f50b69db4a21a01");
+            ClarifaiClient client = new ClarifaiBuilder("efd6a9e549024dbf9f50b69db4a21a01")
                     .client(new OkHttpClient()) // OPTIONAL. Allows customization of OkHttp by the user
                     .buildSync();
 
